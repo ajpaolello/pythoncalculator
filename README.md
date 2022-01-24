@@ -5,7 +5,7 @@ TODO:
 - Make an add function (two parameters for now) - DONE
 - Make a subtract function - DONE
 - Make a multiply function - DONE
-- Make a divide function - DOME
+- Make a divide function - DONE
 - Make an exponent function - DONE
 - Write unit tests using frameworks
 - Make a GitHub for the project - DONE
