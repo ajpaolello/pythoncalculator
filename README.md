@@ -1,14 +1,6 @@
 # pythoncalculator
 Just a python calculator for fun and learning
 
-What does a calculator do?
-
-- Add
-- Subtract
-- Multiply
-- Divide
-- Exponents
-
 TODO:
 - Make an add function (two parameters for now) - DONE
 - Make a subtract function - DONE
