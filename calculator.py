@@ -48,7 +48,20 @@ def divide(num1, num2):
     :param num2: another numeric value
     :return: quotient of num1 and num2
     """
-    num1 /= num2
+    while True:
+        try:
+            num1 /= num2
+            break
+        except ZeroDivisionError:
+            print("Can't divide by zero")
+            # Get a new num2 value
+            while True:
+                num2 = input("Please enter the second number: ")
+                try:
+                    num2 = float(num2)
+                    break
+                except ValueError:
+                    print("Please enter a number!!")
     return num1
 
 
@@ -60,7 +73,20 @@ def divide_whole(num1, num2):
     :param num2: another numeric value
     :return: quotient of num1 and num2
     """
-    num1 //= num2
+    while True:
+        try:
+            num1 //= num2
+            break
+        except ZeroDivisionError:
+            print("Can't divide by zero")
+            # Get a new num2 value
+            while True:
+                num2 = input("Please enter the second number: ")
+                try:
+                    num2 = float(num2)
+                    break
+                except ValueError:
+                    print("Please enter a number!!")
     return num1
 
 
