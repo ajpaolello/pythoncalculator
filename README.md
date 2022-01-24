@@ -10,13 +10,13 @@ What does a calculator do?
 - Exponents
 
 TODO:
-- Make an add function (two parameters for now) 
-- Make a subtract function
-- Make a multiply function
-- Make a divide function
-- Make an exponent function
+- Make an add function (two parameters for now) - DONE
+- Make a subtract function - DONE
+- Make a multiply function - DONE
+- Make a divide function - DOME
+- Make an exponent function - DONE
 - Write unit tests using frameworks
-- Make a GitHub for the project
+- Make a GitHub for the project - DONE
 
 Reach Goals:
 - Have a check for number of digits
