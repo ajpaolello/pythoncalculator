@@ -1,3 +1,7 @@
+import tkinter
+from tkinter import *
+from tkinter import ttk
+
 """
     Python Calculator
     By: Austin Paolello
@@ -117,6 +121,39 @@ def exponent(num1, num2):
         return result
 
 
+def calculator():
+    # TODO: Add a method for an operator being pressed or clear being pressed
+    # Also need to handle num input
+    calc = Tk()
+    calc.geometry("310x150")
+    calc_frame = tkinter.Frame(calc, border=3, relief=tkinter.GROOVE)
+    calc_frame.grid()
+    result = StringVar(calc_frame, "0")
+    operator = "null"
+    answer = ttk.Label(calc_frame, textvariable=result, justify=RIGHT, anchor="e")
+    answer.grid(row=0, column=0, columnspan=4, rowspan=4, sticky=tkinter.E)
+    ttk.Button(calc_frame, text="C").grid(row=4, column=0)
+    ttk.Button(calc_frame, text="+/-").grid(row=4, column=1)
+    ttk.Button(calc_frame, text="exp").grid(row=4, column=2)
+    ttk.Button(calc_frame, text="/").grid(row=4, column=3)
+    ttk.Button(calc_frame, text="7").grid(row=5, column=0)
+    ttk.Button(calc_frame, text="8").grid(row=5, column=1)
+    ttk.Button(calc_frame, text="9").grid(row=5, column=2)
+    ttk.Button(calc_frame, text="x").grid(row=5, column=3)
+    ttk.Button(calc_frame, text="4").grid(row=6, column=0)
+    ttk.Button(calc_frame, text="5").grid(row=6, column=1)
+    ttk.Button(calc_frame, text="6").grid(row=6, column=2)
+    ttk.Button(calc_frame, text="-").grid(row=6, column=3)
+    ttk.Button(calc_frame, text="1").grid(row=7, column=0)
+    ttk.Button(calc_frame, text="2").grid(row=7, column=1)
+    ttk.Button(calc_frame, text="3").grid(row=7, column=2)
+    ttk.Button(calc_frame, text="+").grid(row=7, column=3)
+    ttk.Button(calc_frame, text="0").grid(row=8, column=0, columnspan=2, sticky=tkinter.W+tkinter.E)
+    ttk.Button(calc_frame, text=".").grid(row=8, column=2)
+    ttk.Button(calc_frame, text="=").grid(row=8, column=3)
+    calc.mainloop()
+
+
 def main():
     # Basic menu and instructions
     print("Welcome to the Python Calculator!")
@@ -183,4 +220,4 @@ def main():
 
 
 # Runs main function
-main()
+calculator()
