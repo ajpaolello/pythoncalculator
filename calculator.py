@@ -10,9 +10,15 @@ from tkinter import ttk
     Right now it is only able to accept two numbers as inputs, but I plan on fixing this
     Other plans include adding a GUI
 """
+display = "0"
+num1 = 0
+num2 = 0
+operator = "null"
+result = 0
+currentNum = "num1"
 
 
-def add(num1, num2):
+def add():
     """
     A simple function to calculate the sum of two numbers
     :param num1: a numeric value
@@ -23,7 +29,7 @@ def add(num1, num2):
     return num1
 
 
-def subtract(num1, num2):
+def subtract():
     """
     A simple function to calculate the difference of two numbers
     :param num1: a numeric value
@@ -34,7 +40,7 @@ def subtract(num1, num2):
     return num1
 
 
-def multiply(num1, num2):
+def multiply():
     """
     A simple function to calculate the product of two numbers
     :param num1: a numeric value
@@ -45,7 +51,7 @@ def multiply(num1, num2):
     return num1
 
 
-def divide(num1, num2):
+def divide():
     """
     A simple function to calculate the quotient of two numbers
     :param num1: a numeric value
@@ -66,35 +72,12 @@ def divide(num1, num2):
                     break
                 except ValueError:
                     print("Please enter a number!!")
+    if num1.is_integer():
+        num1 = int(num1)
     return num1
 
 
-def divide_whole(num1, num2):
-    """
-    Similar to the divide function, but this returns a whole number.
-    Honestly not sure how useful this is, but I'm sure there is some weird use case
-    :param num1: a numeric value
-    :param num2: another numeric value
-    :return: quotient of num1 and num2
-    """
-    while True:
-        try:
-            num1 //= num2
-            break
-        except ZeroDivisionError:
-            print("Can't divide by zero")
-            # Get a new num2 value
-            while True:
-                num2 = input("Please enter the second number: ")
-                try:
-                    num2 = float(num2)
-                    break
-                except ValueError:
-                    print("Please enter a number!!")
-    return num1
-
-
-def modulo(num1, num2):
+def modulo():
     """
     A simple function to calculate the remainder of two numbers
     :param num1: a numeric value
@@ -105,7 +88,7 @@ def modulo(num1, num2):
     return num1
 
 
-def exponent(num1, num2):
+def exponent():
     """
     A simple function to calculate the exponent of two numbers
     :param num1: a numeric value
@@ -121,39 +104,123 @@ def exponent(num1, num2):
         return result
 
 
-def calculator():
-    # TODO: Add a method for an operator being pressed or clear being pressed
-    # Also need to handle num input
-    calc = Tk()
-    calc.geometry("310x150")
-    calc_frame = tkinter.Frame(calc, border=3, relief=tkinter.GROOVE)
-    calc_frame.grid()
-    result = StringVar(calc_frame, "0")
-    operator = "null"
-    answer = ttk.Label(calc_frame, textvariable=result, justify=RIGHT, anchor="e")
-    answer.grid(row=0, column=0, columnspan=4, rowspan=4, sticky=tkinter.E)
-    ttk.Button(calc_frame, text="C").grid(row=4, column=0)
-    ttk.Button(calc_frame, text="+/-").grid(row=4, column=1)
-    ttk.Button(calc_frame, text="exp").grid(row=4, column=2)
-    ttk.Button(calc_frame, text="/").grid(row=4, column=3)
-    ttk.Button(calc_frame, text="7").grid(row=5, column=0)
-    ttk.Button(calc_frame, text="8").grid(row=5, column=1)
-    ttk.Button(calc_frame, text="9").grid(row=5, column=2)
-    ttk.Button(calc_frame, text="x").grid(row=5, column=3)
-    ttk.Button(calc_frame, text="4").grid(row=6, column=0)
-    ttk.Button(calc_frame, text="5").grid(row=6, column=1)
-    ttk.Button(calc_frame, text="6").grid(row=6, column=2)
-    ttk.Button(calc_frame, text="-").grid(row=6, column=3)
-    ttk.Button(calc_frame, text="1").grid(row=7, column=0)
-    ttk.Button(calc_frame, text="2").grid(row=7, column=1)
-    ttk.Button(calc_frame, text="3").grid(row=7, column=2)
-    ttk.Button(calc_frame, text="+").grid(row=7, column=3)
-    ttk.Button(calc_frame, text="0").grid(row=8, column=0, columnspan=2, sticky=tkinter.W+tkinter.E)
-    ttk.Button(calc_frame, text=".").grid(row=8, column=2)
-    ttk.Button(calc_frame, text="=").grid(row=8, column=3)
-    calc.mainloop()
+def clear_screen():
+    global display
+    display = "0"
+    answer.config(text=display)
 
 
+def add_num_1():
+    global display
+    if display == "0":
+        display = "1"
+    else:
+        display += "1"
+    answer.config(text=display)
+
+
+def add_num_2():
+    global display
+    if display == "0":
+        display = "2"
+    else:
+        display += "2"
+    answer.config(text=display)
+
+
+def add_num_3():
+    global display
+    if display == "0":
+        display = "3"
+    else:
+        display += "3"
+    answer.config(text=display)
+
+
+def add_num_4():
+    global display
+    if display == "0":
+        display = "4"
+    else:
+        display += "4"
+    answer.config(text=display)
+
+
+def add_num_5():
+    global display
+    if display == "0":
+        display = "5"
+    else:
+        display += "5"
+    answer.config(text=display)
+
+
+def add_num_6():
+    global display
+    if display == "0":
+        display = "6"
+    else:
+        display += "6"
+    answer.config(text=display)
+
+
+def add_num_7():
+    global display
+    if display == "0":
+        display = "7"
+    else:
+        display += "7"
+    answer.config(text=display)
+
+
+def add_num_8():
+    global display
+    if display == "0":
+        display = "8"
+    else:
+        display += "8"
+    answer.config(text=display)
+
+
+def add_num_9():
+    global display
+    if display == "0":
+        display = "9"
+    else:
+        display += "9"
+    answer.config(text=display)
+
+
+calc = Tk()
+calc.geometry("300x158")
+calc_frame = tkinter.Frame(calc, border=3, relief=tkinter.GROOVE)
+calc_frame.grid()
+operator = "null"
+answer = ttk.Label(calc_frame, text=display, justify=RIGHT, anchor="e")
+answer.grid(row=0, column=0, columnspan=4, rowspan=4, sticky=tkinter.E)
+ttk.Button(calc_frame, text="C", command=clear_screen).grid(row=4, column=0)
+ttk.Button(calc_frame, text="+/-").grid(row=4, column=1)
+ttk.Button(calc_frame, text="exp").grid(row=4, column=2)
+ttk.Button(calc_frame, text="/").grid(row=4, column=3)
+ttk.Button(calc_frame, text="7", command=add_num_7).grid(row=5, column=0)
+ttk.Button(calc_frame, text="8", command=add_num_8).grid(row=5, column=1)
+ttk.Button(calc_frame, text="9", command=add_num_9).grid(row=5, column=2)
+ttk.Button(calc_frame, text="x").grid(row=5, column=3)
+ttk.Button(calc_frame, text="4", command=add_num_4).grid(row=6, column=0)
+ttk.Button(calc_frame, text="5", command=add_num_5).grid(row=6, column=1)
+ttk.Button(calc_frame, text="6", command=add_num_6).grid(row=6, column=2)
+ttk.Button(calc_frame, text="-").grid(row=6, column=3)
+ttk.Button(calc_frame, text="1", command=add_num_1).grid(row=7, column=0)
+ttk.Button(calc_frame, text="2", command=add_num_2).grid(row=7, column=1)
+ttk.Button(calc_frame, text="3", command=add_num_3).grid(row=7, column=2)
+ttk.Button(calc_frame, text="+").grid(row=7, column=3)
+ttk.Button(calc_frame, text="0").grid(row=8, column=0, columnspan=2, sticky=tkinter.W+tkinter.E)
+ttk.Button(calc_frame, text=".").grid(row=8, column=2)
+ttk.Button(calc_frame, text="=").grid(row=8, column=3)
+calc.mainloop()
+
+
+"""
 def main():
     # Basic menu and instructions
     print("Welcome to the Python Calculator!")
@@ -200,8 +267,6 @@ def main():
             result = multiply(num1, num2)
         elif choice == 4:
             result = divide(num1, num2)
-        elif choice == 5:
-            result = divide_whole(num1, num2)
         elif choice == 6:
             result = modulo(num1, num2)
         elif choice == 7:
@@ -221,3 +286,4 @@ def main():
 
 # Runs main function
 calculator()
+"""
