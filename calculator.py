@@ -324,10 +324,34 @@ def set_num():
         display = "0"
 
 
+def negative_positive():
+    """
+    A simple function that checks if current number is negative or not and makes it either positive or negative
+    :return:
+    """
+    global display
+    if display[0] == '-':
+        display = display.replace("-", "")
+    else:
+        display = "-" + display
+    answer.config(text=display)
+
+
+def decimal_point():
+    """
+    A simple function that adds a decimal point to the number and updates the display
+    :return:
+    """
+    global display
+    display += "."
+    answer.config(text=display)
+
+
 def calculate():
     """
     The main bridge between pressing equals (after setting up num1 and num2) that chooses one of our existing
-    arithmetic functions and performs the operation. After it updates what our screen says, so we can see the answer
+    arithmetic functions and performs the operation. After that, it updates what our screen says,
+    so we can see the answer
     :return:
     """
     global operator, display
@@ -349,13 +373,14 @@ def calculate():
 
 
 calc = Tk()
-calc.geometry("400x250")
+calc.title("Calculator")
+calc.resizable(False, False)
 calc_frame = tkinter.Frame(calc, border=3, relief=tkinter.GROOVE)
 calc_frame.grid()
 answer = ttk.Label(calc_frame, text=display, justify=RIGHT, anchor="e")
 answer.grid(row=0, column=0, columnspan=4, rowspan=4, sticky=tkinter.E)
 ttk.Button(calc_frame, text="C", command=clear_screen).grid(row=4, column=0)
-ttk.Button(calc_frame, text="+/-").grid(row=4, column=1)
+ttk.Button(calc_frame, text="+/-", command=negative_positive).grid(row=4, column=1)
 ttk.Button(calc_frame, text="%", command=set_op_modulo).grid(row=4, column=2)
 ttk.Button(calc_frame, text="/", command=set_op_divide).grid(row=4, column=3)
 ttk.Button(calc_frame, text="7", command=add_num_7).grid(row=5, column=0)
@@ -371,7 +396,7 @@ ttk.Button(calc_frame, text="2", command=add_num_2).grid(row=7, column=1)
 ttk.Button(calc_frame, text="3", command=add_num_3).grid(row=7, column=2)
 ttk.Button(calc_frame, text="+", command=set_op_add).grid(row=7, column=3)
 ttk.Button(calc_frame, text="0", command=add_num_0).grid(row=8, column=0)
-ttk.Button(calc_frame, text=".").grid(row=8, column=1)
+ttk.Button(calc_frame, text=".", command=decimal_point).grid(row=8, column=1)
 ttk.Button(calc_frame, text="exp", command=set_op_exponent).grid(row=8, column=2)
 ttk.Button(calc_frame, text="=", command=calculate).grid(row=8, column=3)
 calc.mainloop()
